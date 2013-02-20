@@ -1,10 +1,12 @@
 Omrails::Application.routes.draw do
+
+  get "pages/about"
+
   devise_for :users
 
-  root :to => 'static_pages#home'
-  get "about" => "static_pages#about"
- # get "logout" => "static_pages#about"
- # get "login" => "static_pages#about"
+  root :to => 'pages#home'
+  get "about" => "pages#about"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-        <header class="navbar navbar-fixed-top">
+         <header class="navbar navbar-fixed-top">
           <div class="navbar-inner">
             <div class="container">
               <%= link_to "JIRA Issue Tracker App", root_path, id: "logo" %>
@@ -20,18 +20,20 @@
                       <% else %>
                        <li><%= link_to "Log In", new_user_session_path %></li>
                       <% end %>
-                      
-
                 </ul>
               </nav>
             </div>
           </div>
+
+          <%= render 'layouts/header' %>
         </header>
         <div class="container">
             <% flash.each do |key, value| %>
             <%= content_tag(:div, value, class: "alert alert-#{key}") %>
             <% end %>
             <%= yield %>
+            <%= render 'layouts/footer' %>       
         </div>
+            
     </body>
 </html>

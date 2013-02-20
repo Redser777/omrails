@@ -1,0 +1,19 @@
+ 
+
+    <% if user_signed_in?  %>
+    <div class="center hero-unit">
+    <h2>You are signed in</h2>
+  </div>
+    <% else %>
+<div class="center hero-unit">
+    <h1>JIRA Issue Tracker App</h1>
+    <h2>
+      You've found the home page for the
+      <%= link_to "JIRA Issue Tracker", "http://rte.ie" %>
+      application. 
+    </h2>
+    <%= link_to "Sign up now!", new_user_registration_path, 
+                                class: "btn btn-large btn-primary" %>  
+  </div>
+    <% end %>
+
