@@ -2,14 +2,24 @@
 $baseFontFamily: Oxygen;
  @import url(http://fonts.googleapis.com/css?family=Oxygen);
 $navbarBackground: green;
-*/
 $btnPrimaryBackground: green;
+$btnPrimaryBackground: green;
+*/
+
+$navbarBackgroundHighlight: white;
+$navbarBackground: white;
+
 @import 'bootstrap';
 body { 
-	padding-top: 60px;
+	padding-top: 30px;
 }
 
 @import 'bootstrap-responsive';
+
+.navbar-inner{
+    @include box-shadow(none !important);
+    border: 0;
+}
 
 .footer {
 
@@ -17,6 +27,13 @@ body {
 	color: $grayLight;
 	a {
 		color: $gray;
-
 	}
+	
+/*
+	a:hover {
+		text-decoration: underline; 
+		color: red;
+	font-weight:bold;
+	}
+*/
 }
