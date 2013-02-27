@@ -1,0 +1,19 @@
+<h2>Listing tickets</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+  <%= render @tickets %> 
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Ticket', new_ticket_path %>

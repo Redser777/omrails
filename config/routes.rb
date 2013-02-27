@@ -1,5 +1,7 @@
 Omrails::Application.routes.draw do
 
+  resources :tickets
+
   get "pages/about"
 
   devise_for :users
