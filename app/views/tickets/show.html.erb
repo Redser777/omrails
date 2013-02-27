@@ -4,8 +4,13 @@
 			<p>
 			  <%= @ticket.description %>
 			</p>
-		<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-		<%= link_to 'Back', tickets_path %>	
+			<p>
+				<%= @ticket.user.name %>
+			</p>	
+			<% if current_user == @ticket.user %>	
+				<%= link_to 'Edit', edit_ticket_path(@ticket) %> | 
+			<% end %>
+			<%= link_to 'Back', tickets_path %>	
 		</div>
 	</div>
 </div>

@@ -1,8 +1,11 @@
 class TicketsController < ApplicationController
+    before_filter :authenticate_user!, except: [:index]
+
   # GET /tickets
   # GET /tickets.json
   def index
     @tickets = Ticket.all
+    #@tickets = current_user.tickets.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +27,7 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   # GET /tickets/new.json
   def new
-    @ticket = Ticket.new
+    @ticket = current_user.tickets.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +37,13 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1/edit
   def edit
-    @ticket = Ticket.find(params[:id])
+    @ticket = current_user.tickets.find(params[:id])
   end
 
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = Ticket.new(params[:ticket])
+    @ticket = current_user.tickets.new(params[:ticket])
 
     respond_to do |format|
       if @ticket.save
@@ -56,7 +59,7 @@ class TicketsController < ApplicationController
   # PUT /tickets/1
   # PUT /tickets/1.json
   def update
-    @ticket = Ticket.find(params[:id])
+    @ticket = current_user.tickets.find(params[:id])
 
     respond_to do |format|
       if @ticket.update_attributes(params[:ticket])
@@ -72,7 +75,7 @@ class TicketsController < ApplicationController
   # DELETE /tickets/1
   # DELETE /tickets/1.json
   def destroy
-    @ticket = Ticket.find(params[:id])
+    @ticket = current_user.tickets.find(params[:id])
     @ticket.destroy
 
     respond_to do |format|
