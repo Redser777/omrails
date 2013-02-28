@@ -5,7 +5,9 @@ gem 'bootstrap-sass', '~> 2.2.2.0'
 gem 'devise'
 gem 'jquery-rails'
 gem 'simple_form'
+gem "paperclip", "~> 3.0"
 gem 'country_select'
+
 
 group :development do
 	gem 'sqlite3'
